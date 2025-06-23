@@ -49,3 +49,71 @@ An alternative to REST APIs that allows the client to request exactly the data i
 Version control tools used to track changes in code and collaborate with team members. GitHub also hosts the project repository.
 
 
+## Database Design
+
+This project will use a relational database (e.g., PostgreSQL) to store structured data. Below are the key entities and their relationships.
+
+### 1. Users
+Represents individuals who can register and use the platform.
+
+**Fields:**
+- `id`: Unique identifier for the user
+- `name`: Full name of the user
+- `email`: Email address (used for login)
+- `password`: Hashed password
+- `role`: Type of user (e.g., host or guest)
+
+### 2. Properties
+Represents listings created by hosts that can be booked.
+
+**Fields:**
+- `id`: Unique identifier
+- `title`: Name of the property
+- `description`: Property details
+- `location`: Address or city
+- `price_per_night`: Cost per night
+
+**Relationship:**
+- A user (host) can own multiple properties
+
+### 3. Bookings
+Represents reservations made by users for specific properties.
+
+**Fields:**
+- `id`: Unique identifier
+- `user_id`: The user who made the booking
+- `property_id`: The property being booked
+- `start_date`: Check-in date
+- `end_date`: Check-out date
+
+**Relationship:**
+- A user can make multiple bookings
+- A property can have many bookings
+
+### 4. Reviews
+Users can leave feedback on properties they have booked.
+
+**Fields:**
+- `id`: Unique identifier
+- `user_id`: Reviewer’s ID
+- `property_id`: Reviewed property
+- `rating`: Numerical score (e.g., 1–5)
+- `comment`: Text feedback
+
+**Relationship:**
+- A user can leave many reviews
+- A property can have many reviews
+
+### 5. Payments
+Tracks transactions made for bookings.
+
+**Fields:**
+- `id`: Unique identifier
+- `booking_id`: Booking this payment is for
+- `amount`: Total payment amount
+- `payment_date`: Date of transaction
+- `status`: Payment status (e.g., completed, failed)
+
+**Relationship:**
+- Each booking can have one payment
+
