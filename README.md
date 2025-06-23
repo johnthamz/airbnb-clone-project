@@ -167,4 +167,17 @@ All communications will use HTTPS to ensure data is encrypted between the client
 Prevents man-in-the-middle attacks and ensures data integrity.
 
 
+## CI/CD Pipeline
+
+CI/CD stands for Continuous Integration and Continuous Deployment. It is a set of practices that automate the process of testing, building, and deploying code to ensure software is delivered quickly, safely, and reliably.
+
+### Why CI/CD is Important:
+- **Continuous Integration (CI):** Automatically tests and integrates code changes from multiple developers, helping catch bugs early.
+- **Continuous Deployment (CD):** Automatically deploys new versions of the application to production or staging environments, reducing manual work and speeding up delivery.
+
+### Tools We Can Use:
+- **GitHub Actions:** Automates workflows such as running tests or deploying code whenever changes are pushed to the repository.
+- **Docker:** Helps package the application with all its dependencies to ensure it runs consistently across different environments.
+
+By using CI/CD, our Airbnb Clone project will maintain code quality and ensure that updates are delivered faster with fewer bugs.
 
